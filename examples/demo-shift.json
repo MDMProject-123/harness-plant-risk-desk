@@ -1,0 +1,112 @@
+{
+  "shift": "Sample A shift",
+  "startsAt": "2026-01-15T08:00:00Z",
+  "asOf": "2026-01-15T11:00:00Z",
+  "managers": {
+    "plant": "Plant Manager",
+    "production": "Production Manager",
+    "planning": "Planning Manager",
+    "logistics": "Logistics Manager",
+    "maintenance": "Maintenance Manager",
+    "quality": "Quality Manager"
+  },
+  "rules": {
+    "alertLeadMinutes": 60,
+    "acknowledgeWithinMinutes": 10,
+    "qualityFailureThreshold": 3
+  },
+  "events": [
+    {
+      "type": "commitment",
+      "issue": "PLAN-17",
+      "at": "2026-01-15T08:00:00Z",
+      "source": "Planning handover #17",
+      "department": "planning",
+      "line": "Line 3",
+      "title": "Confirm backup production slot",
+      "dueAt": "2026-01-15T11:30:00Z",
+      "blocked": false,
+      "nextAction": "Reserve a slot on Line 5 if tooling and staffing are available."
+    },
+    {
+      "type": "material",
+      "issue": "MAT-142",
+      "at": "2026-01-15T08:30:00Z",
+      "source": "Line 3 stock check #142",
+      "line": "Line 3",
+      "component": "Connector C17",
+      "stockMinutes": 150,
+      "replenishmentAt": "2026-01-15T13:00:00Z",
+      "nextAction": "Check the warehouse and ask Planning to confirm an alternate line."
+    },
+    {
+      "type": "downtime",
+      "issue": "MNT-84",
+      "at": "2026-01-15T09:00:00Z",
+      "source": "Maintenance work order #84",
+      "line": "Line 2",
+      "machine": "Crimp press CP-2",
+      "latestRestartAt": "2026-01-15T09:50:00Z",
+      "recoveryAt": "2026-01-15T10:00:00Z",
+      "nextAction": "Confirm repair or move the work to a qualified backup press."
+    },
+    {
+      "type": "acknowledge",
+      "issue": "MNT-84",
+      "at": "2026-01-15T09:05:00Z",
+      "source": "Maintenance acknowledgement #84",
+      "by": "Maintenance Manager"
+    },
+    {
+      "type": "downtime",
+      "issue": "MNT-84",
+      "at": "2026-01-15T09:15:00Z",
+      "source": "Maintenance work order #84, revised ETA",
+      "line": "Line 2",
+      "machine": "Crimp press CP-2",
+      "latestRestartAt": "2026-01-15T09:50:00Z",
+      "recoveryAt": "2026-01-15T10:45:00Z",
+      "nextAction": "Request a decision on moving the order to the backup press."
+    },
+    {
+      "type": "acknowledge",
+      "issue": "MNT-84",
+      "at": "2026-01-15T09:20:00Z",
+      "source": "Plant manager acknowledgement #84",
+      "by": "Plant Manager"
+    },
+    {
+      "type": "quality",
+      "issue": "QA-29",
+      "at": "2026-01-15T09:25:00Z",
+      "source": "Crimp-force test log and quality hold record #29",
+      "line": "Line 4",
+      "lot": "LOT-H42",
+      "failedTests": 4,
+      "held": true,
+      "shipmentCutoffAt": "2026-01-15T11:40:00Z",
+      "nextAction": "Confirm the affected serial range and report the containment plan."
+    },
+    {
+      "type": "acknowledge",
+      "issue": "QA-29",
+      "at": "2026-01-15T09:35:00Z",
+      "source": "Quality acknowledgement #29",
+      "by": "Quality Manager"
+    },
+    {
+      "type": "resolve",
+      "issue": "MNT-84",
+      "at": "2026-01-15T09:45:00Z",
+      "source": "Maintenance handover #84, order transferred",
+      "by": "Maintenance Manager"
+    },
+    {
+      "type": "acknowledge",
+      "issue": "MAT-142",
+      "at": "2026-01-15T10:12:00Z",
+      "source": "Logistics acknowledgement #142",
+      "by": "Logistics Manager"
+    }
+  ]
+}

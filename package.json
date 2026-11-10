@@ -1,0 +1,29 @@
+{
+  "name": "harness-plant-risk-desk",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "description": "Shift commitments and early risk alerts for automotive wiring harness plants.",
+  "scripts": {
+    "demo": "node cli.mjs",
+    "replay": "node cli.mjs",
+    "test": "node --test",
+    "dev": "eve dev",
+    "build": "eve build",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "ai": "7.0.137",
+    "eve": "1.0.0-rc.8",
+    "just-bash": "3.6.0",
+    "zod": "4.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "24.x",
+    "typescript": "7.0.2"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}
